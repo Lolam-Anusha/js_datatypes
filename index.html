@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    //Primitive datatypes
+        let a = 10;
+        console.log(typeof a);    //number
+
+        let b = 10.234;
+        console.log(typeof b);    //number - IN JS, both the float and double will be considered as number datatype only
+
+        let c = "Anusha";
+        console.log(typeof c);    //string
+
+        let d = +"10";
+        console.log(typeof d)     //Actually it is a string, but to convert it into number we need to use + operator before the string- called type conversion
+
+        var e = 10;
+        let f = "e";
+        console.log(typeof a);    //number
+        console.log(typeof f);    //string
+
+        const g = true;
+        console.log(typeof g);     //boolean
+
+        const h = undefined;
+        console.log(typeof h);     //undefined - We can also store undefined values in variables
+
+    //Non-primitive datatypes
+        const personDetails = {
+            name : "Anusha",
+            age : 21,
+            gender : "female",
+            degree : {
+                btech : "Mech",
+                inter : "MPC",
+                10 : {
+                    subjects : {
+                        maths : 99,
+                        social : 98,
+                        science : 97
+                    }
+                }
+            }
+        }
+        console.log(personDetails);   //personDetails object is printed
+
+        console.log(personDetails.name)    //Anusha
+
+        console.log(personDetails.age1)    //undefined - if we are accessing the key which is not there
+
+        console.log(personDetails.btech)    //undefined - btech property is not in the direct personDetails object, it is in sub degree property object
+
+        console.log(personDetails.degree.btech)
+
+        console.log(personDetails.degree[10].subjects.maths);
+
+        var string = "karunakar";
+        console.log(string[6]);         //k
+        console.log(string[10]);        //undefined
+
+        var object = {
+            name : "karunakar",
+            age : 30,
+            gender : "male"
+        }
+        console.log(object.age);       //30
+
+        var string1 = "karunakar";
+        console.log(string1[3,4,5,7])   //a - index of 7 , it prints the last index value, when we give multiple index in console array
+
+        const array = Array(1,2,3,4,5,6,7,8,9,10);
+        console.log(array)         //(10) [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+        const array1 = Array(1,2,3,4,5,6,7,8,9,10,11);
+        console.log(array1.length);    //11
+
+        const array2 = Array(1,2,"sf", [], {name : "karunkar"});
+        console.log(array2);   //(5) [1, 2, 'sf', Array(0), {…}]
+
+        console.log(array2[3]);   //[]
+        console.log(array2[4]);   //{name : "karunakar"}
+
+        const array3 = Array(1,2,"sf", [], {name : "karunkar", gender : "male"});
+        console.log(array3[4].gender)   //male
+
+        console.log(array2.length)    //5
+        console.log(array2.length-1)   //4 (5-1)
+        console.log(array2.length-6)   //-1 index range out of bond so -1
+
+        array2[2] = "10";   //updating the value in the array
+        console.log(array2)   //(5) [1, 2, '10', Array(0), {…}]
+    </script>
+</body>
+</html>
